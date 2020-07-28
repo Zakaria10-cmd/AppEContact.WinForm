@@ -1,0 +1,190 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{59BA1C69-3150-4A0B-B631-CB99A9B41577}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>AppEContact.WinForm</RootNamespace>
+    <AssemblyName>AppEContact.WinForm</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>EContact.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.Common.10.0.40219.1\lib\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.Common.10.0.40219.1\lib\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.Common.10.0.40219.1\lib\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.WinForms.10.0.40219.1\lib\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices">
+      <HintPath>..\..\..\..\..\..\Program Files\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.DirectoryServices.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="frmAddContact.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmAddContact.Designer.cs">
+      <DependentUpon>frmAddContact.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmListContact.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmListContact.Designer.cs">
+      <DependentUpon>frmListContact.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMenu.Designer.cs">
+      <DependentUpon>frmMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPrint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPrint.Designer.cs">
+      <DependentUpon>frmPrint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Contact.cs" />
+    <Compile Include="Models\DBContact.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmAddContact.resx">
+      <DependentUpon>frmAddContact.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmListContact.resx">
+      <DependentUpon>frmListContact.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMenu.resx">
+      <DependentUpon>frmMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPrint.resx">
+      <DependentUpon>frmPrint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="RpListContact.rdlc" />
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\AppEContact.WinForm.Models.Contact.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="EContact.ico" />
+    <Content Include="Icônes\avatars\images %2810%29.jpeg" />
+    <Content Include="Icônes\avatars\images %2810%29.png" />
+    <Content Include="Icônes\avatars\images %2811%29.jpeg" />
+    <Content Include="Icônes\avatars\images %2811%29.png" />
+    <Content Include="Icônes\avatars\images %283%29.png" />
+    <Content Include="Icônes\avatars\images %284%29.png" />
+    <Content Include="Icônes\avatars\images %285%29.png" />
+    <Content Include="Icônes\avatars\images %286%29.png" />
+    <Content Include="Icônes\avatars\images %287%29.jpeg" />
+    <Content Include="Icônes\avatars\images %287%29.png" />
+    <Content Include="Icônes\avatars\images %288%29.png" />
+    <Content Include="Icônes\avatars\images %289%29.jpeg" />
+    <Content Include="Icônes\avatars\images %289%29.png" />
+    <Content Include="Icônes\avatars\img.jpg" />
+    <Content Include="Icônes\avatars\téléchargement.jpg" />
+    <Content Include="Icônes\Backup.jpg" />
+    <Content Include="Icônes\bouton-initialisation.jpg" />
+    <Content Include="Icônes\btn Backup.jpg" />
+    <Content Include="Icônes\BTN Enregistrer.jpg" />
+    <Content Include="Icônes\btn initialiser.jpg" />
+    <Content Include="Icônes\btn liste.jpg" />
+    <Content Include="Icônes\btn modifier.jpg" />
+    <Content Include="Icônes\Btn Restore.jpg" />
+    <Content Include="Icônes\Btn Save.jpg" />
+    <Content Include="Icônes\btn sup.jpg" />
+    <Content Include="Icônes\BtnSave In.jpg" />
+    <Content Include="Icônes\button Save.jpg" />
+    <Content Include="Icônes\chercher.png" />
+    <Content Include="Icônes\Connexion.jpg" />
+    <Content Include="Icônes\Contact.jpg" />
+    <Content Include="Icônes\Del.jpg" />
+    <Content Include="Icônes\ic-ne-de-bouton-r-initialisation-la-ligne-le-glyph-et-version-colorée-remplie-d-ensemble-régénèrent-contour-flèche-signe-146390107.jpg" />
+    <Content Include="Icônes\images %281%29.jpeg" />
+    <Content Include="Icônes\images %281%29.png" />
+    <Content Include="Icônes\images %282%29.jpeg" />
+    <Content Include="Icônes\images %282%29.png" />
+    <Content Include="Icônes\images %283%29.jpeg" />
+    <Content Include="Icônes\images %284%29.jpeg" />
+    <Content Include="Icônes\images %285%29.jpeg" />
+    <Content Include="Icônes\images %286%29.jpeg" />
+    <Content Include="Icônes\images.jpeg" />
+    <Content Include="Icônes\images.jpg" />
+    <Content Include="Icônes\images.jpg2.jpg" />
+    <Content Include="Icônes\images.png" />
+    <Content Include="Icônes\logo contact.png" />
+    <Content Include="Icônes\Poubele.jpg" />
+    <Content Include="Icônes\reinitialiser-Reset.jpg" />
+    <Content Include="Icônes\SAVE.jpg" />
+    <Content Include="Icônes\sup.jpg" />
+    <Content Include="Icônes\Supp.jpg" />
+    <Content Include="Icônes\Telecharger.jpg" />
+    <Content Include="Icônes\téléchargement.jpg2.jpg" />
+    <None Include="Resources\images %288%29.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
