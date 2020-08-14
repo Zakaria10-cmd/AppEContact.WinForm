@@ -37,7 +37,8 @@ namespace AppEContact.WinForm
                 "Ajout Contact",
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Information);
-
+            DBContact.UpdateContact(c);
+            
         }
 
         private void btnReset_Click(object sender, EventArgs e)
